@@ -48,7 +48,6 @@ export const MapContainer: React.FC<MapContainerProps> = ({
 
     // Dynamically import Leaflet on client side
     import('leaflet').then((L) => {
-      // Fix default leafet image icon path issues
       delete (L.Icon.Default.prototype as any)._getIconUrl;
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -57,10 +56,10 @@ export const MapContainer: React.FC<MapContainerProps> = ({
       });
 
       if (!leafletMapRef.current) {
-        // Center on Uttarakhand (~ 30.0668, 78.9)
+        // Center on Uttarakhand (~ 30.15, 78.85)
         const map = L.map(container, {
           center: [30.15, 78.85],
-          zoom: 9,
+          zoom: 8,
           zoomControl: true,
         });
 
@@ -82,6 +81,7 @@ export const MapContainer: React.FC<MapContainerProps> = ({
         const { bg, border } = getStatusColor(node.crowdStatus);
         const isSelected = selectedLocation?.id === node.id;
         const isChoked = node.crowdStatus === 'Choked';
+        const isGarhwal = node.division === 'Garhwal';
 
         const customIcon = L.divIcon({
           className: 'custom-crowd-marker',
@@ -94,7 +94,7 @@ export const MapContainer: React.FC<MapContainerProps> = ({
               width: ${isSelected ? '36px' : '28px'};
               height: ${isSelected ? '36px' : '28px'};
               background-color: ${bg};
-              border: 3px solid ${isSelected ? '#ffffff' : border};
+              border: 3px solid ${isSelected ? '#ffffff' : isGarhwal ? '#10b981' : '#06b6d4'};
               border-radius: 50%;
               box-shadow: 0 0 ${isChoked ? '16px' : '8px'} ${bg};
               cursor: pointer;
@@ -126,31 +126,40 @@ export const MapContainer: React.FC<MapContainerProps> = ({
           markersRef.current[node.id] = marker;
         }
 
-        // Popup Content
+        // Enhanced Rich Popup Content
         const popupHtml = `
-          <div style="min-width: 200px; padding: 4px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px;">
-              <h3 style="margin: 0; font-size: 14px; font-weight: 700; color: #f3f4f6;">${node.name}</h3>
-              <span style="font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; background: ${bg}; color: #ffffff;">
+          <div style="min-width: 220px; max-width: 260px; padding: 2px; font-family: system-ui;">
+            <div style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden; margin-bottom: 8px; position: relative; background: #0f172a;">
+              <img src="${node.imageUrl}" alt="${node.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80'" />
+              <div style="position: absolute; top: 6px; left: 6px; background: rgba(15, 23, 42, 0.85); color: ${isGarhwal ? '#6ee7b7' : '#67e8f9'}; padding: 2px 6px; border-radius: 4px; font-size: 9px; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">
+                ${node.division} Division
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px;">
+              <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #f8fafc;">${node.name}</h3>
+              <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: ${bg}; color: #ffffff;">
                 ${node.crowdStatus}
               </span>
             </div>
-            <p style="margin: 0 0 8px 0; font-size: 11px; color: #9ca3af;">${node.region} • ${node.category}</p>
-            <div style="background: rgba(30, 41, 59, 0.8); padding: 8px; border-radius: 6px; margin-bottom: 8px;">
-              <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;">
-                <span style="color: #9ca3af;">Crowd Score:</span>
-                <span style="font-weight: 700; color: ${bg};">${node.currentCrowdScore} / 100</span>
+
+            <p style="margin: 0 0 6px 0; font-size: 11px; color: #94a3b8;">📍 ${node.district} • ${node.category}</p>
+
+            <div style="background: rgba(15, 23, 42, 0.9); padding: 6px 8px; border-radius: 6px; margin-bottom: 8px; border: 1px solid rgba(51, 65, 85, 0.8);">
+              <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 3px;">
+                <span style="color: #94a3b8;">Crowd Density:</span>
+                <span style="font-weight: 800; color: ${bg};">${node.currentCrowdScore} / 100</span>
               </div>
-              <div style="width: 100%; height: 6px; background: #374151; border-radius: 3px; overflow: hidden;">
+              <div style="width: 100%; height: 5px; background: #334155; border-radius: 3px; overflow: hidden;">
                 <div style="width: ${node.currentCrowdScore}%; height: 100%; background: ${bg}; border-radius: 3px;"></div>
               </div>
             </div>
-            <p style="margin: 0 0 8px 0; font-size: 10px; color: #d1d5db; line-height: 1.3;">${node.description}</p>
+
             <button 
               id="report-btn-${node.id}"
-              style="width: 100%; padding: 6px; background: #10b981; color: #090d16; border: none; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; transition: background 0.2s;"
+              style="width: 100%; padding: 6px; background: #10b981; color: #022c22; border: none; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; transition: background 0.2s;"
             >
-              ⚡ Submit Live Verification Report
+              ⚡ Verify Live Status
             </button>
           </div>
         `;
@@ -189,7 +198,7 @@ export const MapContainer: React.FC<MapContainerProps> = ({
             icon: userIcon,
           }).addTo(map);
 
-          userMarkerRef.current.bindTooltip('Your Current Location', { permanent: false });
+          userMarkerRef.current.bindTooltip('Your Location', { permanent: false });
         } else {
           userMarkerRef.current.setLatLng([userCoords.lat, userCoords.lng]);
         }
@@ -214,12 +223,12 @@ export const MapContainer: React.FC<MapContainerProps> = ({
     });
   }, [locations, selectedLocation, userCoords, radiusKm]);
 
-  // Center map on selected location node when clicked from sidebar
+  // Center map on selected location node when clicked from sidebar or places grid
   useEffect(() => {
     if (selectedLocation && leafletMapRef.current) {
       leafletMapRef.current.flyTo(
         [selectedLocation.coordinates.lat, selectedLocation.coordinates.lng],
-        12,
+        11,
         { duration: 1.2 }
       );
 
@@ -231,21 +240,15 @@ export const MapContainer: React.FC<MapContainerProps> = ({
   }, [selectedLocation]);
 
   return (
-    <div className="relative w-full h-full min-h-[480px] rounded-2xl overflow-hidden glass-panel border border-slate-800 shadow-2xl">
+    <div className="relative w-full h-full min-h-[500px] rounded-3xl overflow-hidden glass-panel border border-slate-800 shadow-2xl">
       <div ref={mapRef} className="w-full h-full" />
-      <div className="absolute bottom-4 left-4 z-[400] glass-panel px-3 py-2 rounded-xl text-xs flex items-center gap-3 border border-slate-800/80">
-        <span className="font-semibold text-slate-300">Density Gauge:</span>
-        <div className="flex items-center gap-1.5 text-slate-300">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Clear (0-35)
+      <div className="absolute bottom-4 left-4 z-[400] glass-panel px-3 py-2 rounded-2xl text-xs flex flex-wrap items-center gap-3 border border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+        <span className="font-bold text-slate-300">Division Key:</span>
+        <div className="flex items-center gap-1.5 text-emerald-300 font-semibold">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Garhwal
         </div>
-        <div className="flex items-center gap-1.5 text-slate-300">
-          <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Moderate (36-70)
-        </div>
-        <div className="flex items-center gap-1.5 text-slate-300">
-          <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span> Heavy (71-85)
-        </div>
-        <div className="flex items-center gap-1.5 text-slate-300">
-          <span className="w-2.5 h-2.5 rounded-full bg-red-900 animate-ping"></span> Choked (&gt;85)
+        <div className="flex items-center gap-1.5 text-cyan-300 font-semibold">
+          <span className="w-2.5 h-2.5 rounded-full bg-cyan-500"></span> Kumaon
         </div>
       </div>
     </div>

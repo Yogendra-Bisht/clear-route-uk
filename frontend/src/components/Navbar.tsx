@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MapPin, Navigation, Signal, ShieldAlert, Calendar, Grid, BookOpen,
-  Route, Menu, X, Sparkles
+  Route, Menu, X, Sparkles, Radio, History
 } from 'lucide-react';
 
-export type MainTabType = 'map' | 'places' | 'timeline' | 'uttarakhand' | 'planner';
+export type MainTabType = 'map' | 'places' | 'timeline' | 'uttarakhand' | 'music' | 'disaster' | 'planner';
 
 interface NavbarProps {
   activeTab: MainTabType;
@@ -17,11 +17,13 @@ interface NavbarProps {
 }
 
 const tabs: { id: MainTabType; label: string; icon: React.ComponentType<any>; color: string }[] = [
-  { id: 'map',          label: 'Live Map',         icon: MapPin,    color: 'from-emerald-400 to-teal-500' },
-  { id: 'places',       label: 'Explore',          icon: Grid,      color: 'from-cyan-400 to-sky-500' },
-  { id: 'timeline',     label: '7-Day Forecast',   icon: Calendar,  color: 'from-amber-400 to-orange-500' },
-  { id: 'uttarakhand',  label: 'Discover UK',      icon: BookOpen,  color: 'from-purple-400 to-violet-500' },
-  { id: 'planner',      label: 'Plan My Trip',     icon: Route,     color: 'from-pink-400 to-rose-500' },
+  { id: 'map',          label: 'Live Map',         icon: MapPin,       color: 'from-emerald-400 to-teal-500' },
+  { id: 'places',       label: 'Explore',          icon: Grid,         color: 'from-cyan-400 to-sky-500' },
+  { id: 'timeline',     label: '7-Day Forecast',   icon: Calendar,     color: 'from-amber-400 to-orange-500' },
+  { id: 'uttarakhand',  label: 'Discover UK',      icon: BookOpen,     color: 'from-purple-400 to-violet-500' },
+  { id: 'music',        label: 'Pahadi Music',     icon: Radio,        color: 'from-amber-400 to-yellow-500' },
+  { id: 'disaster',     label: 'Disaster Hub',     icon: ShieldAlert,  color: 'from-red-400 to-rose-500' },
+  { id: 'planner',      label: 'Plan My Trip',     icon: Route,        color: 'from-pink-400 to-rose-500' },
 ];
 
 const containerVariants = {

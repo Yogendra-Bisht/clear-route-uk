@@ -14,6 +14,8 @@ import { PlaceDetailModal } from '@/components/search/PlaceDetailModal';
 import { ReportModal } from '@/components/crowdsource/ReportModal';
 import { UttarakhandGuide } from '@/components/guide/UttarakhandGuide';
 import { TripPlanner } from '@/components/planner/TripPlanner';
+import { FolkMusicSection } from '@/components/music/FolkMusicSection';
+import { DisasterIntelligenceHub } from '@/components/disaster/DisasterIntelligenceHub';
 import { Activity, Sparkles, MapPin, Search, Compass, Grid, Filter, RefreshCw, Landmark, Footprints, Trees } from 'lucide-react';
 
 export default function Home() {
@@ -360,7 +362,33 @@ export default function Home() {
             </motion.div>
           )}
 
-          {/* TAB 5: PLAN MY TRIP */}
+          {/* TAB 5: FOLK & MODERN PAHADI MUSIC */}
+          {activeTab === 'music' && (
+            <motion.div
+              key="music-tab"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.2 }}
+            >
+              <FolkMusicSection />
+            </motion.div>
+          )}
+
+          {/* TAB 6: NATURAL DISASTER INTELLIGENCE HUB */}
+          {activeTab === 'disaster' && (
+            <motion.div
+              key="disaster-tab"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.2 }}
+            >
+              <DisasterIntelligenceHub />
+            </motion.div>
+          )}
+
+          {/* TAB 7: PLAN MY TRIP */}
           {activeTab === 'planner' && (
             <motion.div
               key="planner-tab"

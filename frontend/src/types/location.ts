@@ -16,6 +16,20 @@ export type LocationCategory =
   | 'Pilgrimage' 
   | 'Transit Hub';
 
+export type TrekDifficulty = 'Easy' | 'Easy-Moderate' | 'Moderate' | 'Moderate-Difficult' | 'Difficult' | 'Strenuous / Expedition';
+
+export interface TrekDetails {
+  distanceKm: number;           // Total round-trip or trail distance in km
+  durationDays: number;          // Number of trekking days required
+  difficulty: TrekDifficulty;    // Toughness rating
+  maxAltitudeMeters: number;     // Highest altitude in meters
+  baseCamp: string;              // Starting village / trailhead
+  bestMonths: string;            // Peak trekking season
+  requiresPermit: boolean;       // Permit status (Forest Dept / Inner Line)
+  permitDetails?: string;        // Permit authority / process
+  itinerarySummary?: string[];   // Day-by-day trek itinerary preview
+}
+
 export interface LocationNode {
   id: string;
   name: string;
@@ -35,6 +49,7 @@ export interface LocationNode {
   highlights?: string[];
   travelAlert?: string;
   historicalPeakHour?: string;
+  trekDetails?: TrekDetails;     // Granular trek parameters if location is a trek/adventure site
 }
 
 export interface TimelinePoint {
@@ -108,5 +123,75 @@ export interface TripPlan {
     miscellaneous: number;
     total: number;
   };
+}
+
+// ── Folk & Popular Music Types ────────────────────────────────────────────────
+
+export type MusicCategory = 'Folk Legend' | 'Modern Pahadi Band' | 'Traditional Instrument' | 'Cultural Genre';
+
+export interface MusicTrack {
+  id: string;
+  title: string;
+  artist: string;
+  genre: string;
+  duration?: string;
+  youtubeUrl?: string;
+  spotifyUrl?: string;
+  coverImage?: string;
+}
+
+export interface FolkArtist {
+  id: string;
+  name: string;
+  category: MusicCategory;
+  region: DivisionName | 'Statewide';
+  title: string; // e.g. "Voice of the Hills", "Padma Shri Folk Singer"
+  bio: string;
+  imageUrl: string;
+  popularTracks: MusicTrack[];
+  instrumentsPlayed?: string[];
+  associatedValleys?: string[];
+}
+
+export interface TraditionalInstrument {
+  id: string;
+  name: string;
+  regionalName: string;
+  material: string;
+  description: string;
+  usedIn: string;
+  imageUrl: string;
+}
+
+// ── Natural Disaster Intelligence Types ─────────────────────────────────────
+
+export type DisasterSeverity = 'Critical' | 'Severe' | 'Moderate' | 'Historical Warning';
+
+export type DisasterCategory = 'Flash Flood' | 'Landslide' | 'Glacial Outburst' | 'Land Subsidence' | 'Earthquake' | 'Cloudburst';
+
+export interface DisasterImpact {
+  livesAffected?: string;
+  infrastructureDamage: string;
+  affectedCorridors: string[];
+  reconstructionStatus: string;
+  currentSafetyAdvice: string;
+}
+
+export interface DisasterEvent {
+  id: string;
+  title: string;
+  year: number;
+  dateStr: string;
+  category: DisasterCategory;
+  district: string;
+  region: DivisionName;
+  severity: DisasterSeverity;
+  coordinates: LocationCoordinates;
+  summary: string;
+  impact: DisasterImpact;
+  lessonsLearned: string[];
+  currentSafetyScore: number; // 0 to 100 (100 = safe corridor today)
+  mitigationMeasures: string[];
+  imageUrl: string;
 }
 

@@ -137,6 +137,19 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({
           </p>
         </div>
 
+        {/* Trek Parameters Badge Bar if location has trekDetails */}
+        {location.trekDetails && (
+          <div className="flex items-center justify-between p-2 rounded-xl bg-slate-950/80 border border-emerald-500/30 text-xs">
+            <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
+              <Footprints className="w-3.5 h-3.5" />
+              <span>{location.trekDetails.distanceKm} km • {location.trekDetails.durationDays} Days</span>
+            </div>
+            <span className="text-[10px] font-black px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              {location.trekDetails.difficulty}
+            </span>
+          </div>
+        )}
+
         {/* Highlights Pills */}
         {location.highlights && location.highlights.length > 0 && (
           <div className="flex flex-wrap gap-1.5 pt-1">

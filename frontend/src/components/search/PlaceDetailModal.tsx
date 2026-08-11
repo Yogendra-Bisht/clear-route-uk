@@ -201,6 +201,64 @@ export const PlaceDetailModal: React.FC<PlaceDetailModalProps> = ({
                 )}
               </div>
 
+              {/* Granular Trek Parameters & Itinerary if location is a Trek */}
+              {location.trekDetails && (
+                <div className="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-4">
+                  <div className="flex items-center justify-between border-b border-emerald-500/20 pb-3">
+                    <div className="flex items-center gap-2">
+                      <Footprints className="w-5 h-5 text-emerald-400" />
+                      <h4 className="text-sm font-black uppercase text-emerald-300 tracking-wider">
+                        Trek Expedition Parameters
+                      </h4>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-lg text-xs font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                      Toughness: {location.trekDetails.difficulty}
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                    <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+                      <span className="text-[10px] text-slate-400 font-semibold block">Trail Distance</span>
+                      <span className="text-sm font-extrabold text-white">{location.trekDetails.distanceKm} km</span>
+                    </div>
+                    <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+                      <span className="text-[10px] text-slate-400 font-semibold block">Duration</span>
+                      <span className="text-sm font-extrabold text-white">{location.trekDetails.durationDays} Days</span>
+                    </div>
+                    <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+                      <span className="text-[10px] text-slate-400 font-semibold block">Max Elevation</span>
+                      <span className="text-sm font-extrabold text-cyan-400">{location.trekDetails.maxAltitudeMeters} m</span>
+                    </div>
+                    <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+                      <span className="text-[10px] text-slate-400 font-semibold block">Base Camp</span>
+                      <span className="text-xs font-bold text-amber-300 truncate block">{location.trekDetails.baseCamp}</span>
+                    </div>
+                  </div>
+
+                  {location.trekDetails.requiresPermit && (
+                    <div className="p-3 rounded-xl bg-slate-900/90 border border-amber-500/30 text-xs text-amber-200">
+                      <b>Mandatory Permit:</b> {location.trekDetails.permitDetails || 'Forest / Inner Line permit required'}
+                    </div>
+                  )}
+
+                  {location.trekDetails.itinerarySummary && location.trekDetails.itinerarySummary.length > 0 && (
+                    <div className="space-y-2 pt-2 border-t border-emerald-500/20">
+                      <p className="text-xs font-bold text-slate-300 uppercase tracking-wider">Day-by-Day Trek Itinerary</p>
+                      <div className="space-y-1.5">
+                        {location.trekDetails.itinerarySummary.map((dayStep, idx) => (
+                          <div key={idx} className="flex items-start gap-2 text-xs text-slate-200 bg-slate-900/60 p-2 rounded-xl border border-slate-800">
+                            <span className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 mt-0.5">
+                              {idx + 1}
+                            </span>
+                            <span>{dayStep}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {/* Description */}
               <div className="space-y-2">
                 <h4 className="text-xs uppercase font-extrabold tracking-wider text-slate-400">Overview</h4>

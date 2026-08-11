@@ -122,7 +122,24 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
     bestTimeToVisit: 'Jul - Sep (Peak Bloom)',
     highlights: ['Brahma Kamal', 'Blue Poppy', 'Pushpawati River', 'Snow Leopard Habitat'],
     travelAlert: 'Day entry permits enforced; overnight stay strictly prohibited inside park.',
-    historicalPeakHour: '07:00 - 11:00 IST'
+    historicalPeakHour: '07:00 - 11:00 IST',
+    trekDetails: {
+      distanceKm: 38,
+      durationDays: 6,
+      difficulty: 'Easy-Moderate',
+      maxAltitudeMeters: 3658,
+      baseCamp: 'Govindghat / Ghangaria Base',
+      bestMonths: 'July to September (Monsoon Bloom)',
+      requiresPermit: true,
+      permitDetails: 'Forest Checkpost Permit at Ghangaria Entry Gate (₹200 for Indians, ₹800 Foreigners)',
+      itinerarySummary: [
+        'Day 1: Drive Rishikesh to Govindghat (295km)',
+        'Day 2: Trek Govindghat to Ghangaria Base Camp (14km)',
+        'Day 3: Ghangaria to Valley of Flowers core meadow & return (10km)',
+        'Day 4: Ghangaria to Hemkund Sahib (4,329m) & return (12km)',
+        'Day 5: Trek back to Govindghat & drive to Joshimath'
+      ]
+    }
   },
   {
     id: 'kedarkantha-trek',
@@ -141,7 +158,24 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
     altitude: '3,800 m',
     bestTimeToVisit: 'Dec - Apr (Snow) & Sep - Nov',
     highlights: ['Juda Ka Talab Lake', 'Pine Forest Camps', '360 Himalayan Summit View'],
-    historicalPeakHour: '04:00 - 08:00 IST (Summit Push)'
+    historicalPeakHour: '04:00 - 08:00 IST (Summit Push)',
+    trekDetails: {
+      distanceKm: 20,
+      durationDays: 5,
+      difficulty: 'Easy-Moderate',
+      maxAltitudeMeters: 3800,
+      baseCamp: 'Sankri Village (Uttarkashi)',
+      bestMonths: 'December to April (Snow) & October to November',
+      requiresPermit: true,
+      permitDetails: 'Govind Wildlife Sanctuary Forest Entry Permit (Issued at Sankri Checkpost)',
+      itinerarySummary: [
+        'Day 1: Drive Dehradun to Sankri Base Village (220km)',
+        'Day 2: Trek Sankri to Juda Ka Talab (4km)',
+        'Day 3: Juda Ka Talab to Kedarkantha Base Camp (4km)',
+        'Day 4: Summit Push to 3,800m Peak & descend to Hargaon (6km)',
+        'Day 5: Hargaon to Sankri & drive back to Dehradun'
+      ]
+    }
   },
   {
     id: 'har-ki-dun',
@@ -160,7 +194,24 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
     altitude: '3,566 m',
     bestTimeToVisit: 'Apr - Jun & Sep - Dec',
     highlights: ['Osla Ancient Wooden Village', 'Jaundhar Glacier View', 'Swargarohini Peaks'],
-    historicalPeakHour: '08:00 - 14:00 IST'
+    historicalPeakHour: '08:00 - 14:00 IST',
+    trekDetails: {
+      distanceKm: 47,
+      durationDays: 7,
+      difficulty: 'Moderate',
+      maxAltitudeMeters: 3566,
+      baseCamp: 'Sankri / Taluka Village',
+      bestMonths: 'April to June & September to December',
+      requiresPermit: true,
+      permitDetails: 'Govind Pashu Vihar National Park Entry Permit',
+      itinerarySummary: [
+        'Day 1: Drive Dehradun to Sankri (220km)',
+        'Day 2: Drive Sankri to Taluka (12km), trek to Osla Village (14km)',
+        'Day 3: Osla to Har Ki Dun Valley (11km)',
+        'Day 4: Exploration of Maninda Tal & Jaundhar Glacier Viewpoint (8km)',
+        'Day 5-6: Return trek Osla to Taluka & Sankri'
+      ]
+    }
   },
   {
     id: 'roopkund-lake',
@@ -180,11 +231,101 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
     bestTimeToVisit: 'May - Jun & Sep - Oct',
     highlights: ['Ali Bugyal Meadow', 'Bedni Bugyal', 'Nanda Ghunti View', 'Skeletal Lake'],
     travelAlert: 'High altitude trek; restricted camping rules enforced on meadows.',
-    historicalPeakHour: '05:00 - 09:00 IST'
+    historicalPeakHour: '05:00 - 09:00 IST',
+    trekDetails: {
+      distanceKm: 53,
+      durationDays: 8,
+      difficulty: 'Moderate-Difficult',
+      maxAltitudeMeters: 5029,
+      baseCamp: 'Lohajung Village (Chamoli)',
+      bestMonths: 'May to June & September to October',
+      requiresPermit: true,
+      permitDetails: 'Nanda Devi Biosphere Reserve Permit (Forest Officer Wan/Lohajung)',
+      itinerarySummary: [
+        'Day 1: Drive Kathgodam to Lohajung (230km)',
+        'Day 2: Lohajung to Didna Village (8km)',
+        'Day 3: Didna to Ali Bugyal & Bedni Bugyal (10km)',
+        'Day 4: Bedni Bugyal to Bhagwabasa (9km)',
+        'Day 5: Summit push to Roopkund (5,029m) & Junargali Pass (7km)',
+        'Day 6-7: Descend via Bedni to Wan Village & Lohajung'
+      ]
+    }
+  },
+  {
+    id: 'kuari-pass-trail',
+    name: 'Kuari Pass Trek (Lord Curzon Trail)',
+    division: 'Garhwal',
+    district: 'Chamoli',
+    region: 'Nanda Devi Biosphere',
+    category: 'Treks & Adventure',
+    coordinates: { lng: 79.5600, lat: 30.5000 },
+    currentCrowdScore: 32,
+    crowdStatus: 'Clear',
+    capacityLimit: 3000,
+    lastUpdated: '18 mins ago',
+    description: 'Historical trail opened by Lord Curzon in 1905. Offers unmatched panoramas of Nanda Devi (7,816m), Dronagiri, Chaukhamba, and Trishul peaks.',
+    imageUrl: 'https://images.unsplash.com/photo-1548777123-e216912df7d8?auto=format&fit=crop&w=1000&q=80',
+    altitude: '3,876 m',
+    bestTimeToVisit: 'Nov - Apr (Winter Snow) & Sep - Oct',
+    highlights: ['Nanda Devi Panoramic View', 'Oak & Rhododendron Forests', 'Tali Forest Lake', 'Auli Ski Slope Finish'],
+    historicalPeakHour: '06:00 - 11:00 IST',
+    trekDetails: {
+      distanceKm: 33,
+      durationDays: 6,
+      difficulty: 'Easy-Moderate',
+      maxAltitudeMeters: 3876,
+      baseCamp: 'Dhak Village (Joshimath)',
+      bestMonths: 'November to April (Snow) & September to October',
+      requiresPermit: true,
+      permitDetails: 'Joshimath Forest Range Entry Permit',
+      itinerarySummary: [
+        'Day 1: Drive Haridwar/Rishikesh to Joshimath (255km)',
+        'Day 2: Drive Joshimath to Dhak (12km), trek to Gulling Top (6km)',
+        'Day 3: Gulling Top to Tali Forest Camp (5km)',
+        'Day 4: Tali to Kuari Pass summit (3,876m) & back via Khullara (12km)',
+        'Day 5: Tali to Auli ski slopes & drive to Joshimath (8km)'
+      ]
+    }
+  },
+  {
+    id: 'brahmatal-trek',
+    name: 'Brahmatal Winter Lake Trek',
+    division: 'Garhwal',
+    district: 'Chamoli',
+    region: 'Tharali Basin',
+    category: 'Treks & Adventure',
+    coordinates: { lng: 79.6800, lat: 30.2100 },
+    currentCrowdScore: 38,
+    crowdStatus: 'Clear',
+    capacityLimit: 2500,
+    lastUpdated: '25 mins ago',
+    description: 'Sacred glacial lake where Lord Brahma is believed to have meditated. Unbeatable winter ridge walk viewing Mt. Trishul and Nanda Ghunti up close.',
+    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80',
+    altitude: '3,850 m',
+    bestTimeToVisit: 'Dec - Mar (Snow Trek)',
+    highlights: ['Bekaltal Frozen Lake', 'Brahmatal Ridge Walk', 'Mt. Trishul & Nanda Ghunti Views'],
+    historicalPeakHour: '05:00 - 10:00 IST',
+    trekDetails: {
+      distanceKm: 24,
+      durationDays: 6,
+      difficulty: 'Easy-Moderate',
+      maxAltitudeMeters: 3850,
+      baseCamp: 'Lohajung Village (Chamoli)',
+      bestMonths: 'December to March (Winter Snow)',
+      requiresPermit: true,
+      permitDetails: 'Chamoli Forest Department Entry Permit at Lohajung',
+      itinerarySummary: [
+        'Day 1: Drive Kathgodam to Lohajung (230km)',
+        'Day 2: Lohajung to Bekaltal Lake (6km)',
+        'Day 3: Bekaltal to Brahmatal Camp (7km)',
+        'Day 4: Brahmatal Ridge & Pass summit push (3,850m) (7km)',
+        'Day 5: Descend Brahmatal to Lohajung (9km)'
+      ]
+    }
   },
   {
     id: 'chopta-tungnath',
-    name: 'Chopta & Tungnath Temple',
+    name: 'Chopta, Tungnath & Chandrashila Peak',
     division: 'Garhwal',
     district: 'Rudraprayag',
     region: 'Kedarnath Wildlife Sanctuary',
@@ -194,12 +335,26 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
     crowdStatus: 'Heavy',
     capacityLimit: 6000,
     lastUpdated: '14 mins ago',
-    description: 'Highest Shiva temple in the world (3,680m) and starting point for Chandrashila summit trek.',
+    description: 'Highest Shiva temple in the world (3,680m) and starting point for Chandrashila summit trek (4,000m).',
     imageUrl: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1000&q=80',
     altitude: '3,680 m',
     bestTimeToVisit: 'Apr - Nov (Tungnath Open)',
     highlights: ['Highest Shiva Temple', 'Chandrashila 4000m Peak', 'Mini Switzerland Meadows'],
-    historicalPeakHour: '07:00 - 15:00 IST'
+    historicalPeakHour: '07:00 - 15:00 IST',
+    trekDetails: {
+      distanceKm: 10,
+      durationDays: 2,
+      difficulty: 'Easy-Moderate',
+      maxAltitudeMeters: 4000,
+      baseCamp: 'Chopta Base Camp',
+      bestMonths: 'April to November',
+      requiresPermit: false,
+      permitDetails: 'Kedarnath Wildlife Sanctuary Checkpost Entry (₹150)',
+      itinerarySummary: [
+        'Day 1: Arrive Chopta, trek to Deoriatal Lake (3km)',
+        'Day 2: Chopta to Tungnath Shiva Temple (3.5km) & Chandrashila Peak (1.5km) sunrise push'
+      ]
+    }
   },
 
   // GARHWAL DIVISION - CITIES, TRANSIT & WILDLIFE
@@ -518,7 +673,7 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
   },
   {
     id: 'munsiyari-panchachuli',
-    name: 'Munsiyari & Panchachuli Peaks',
+    name: 'Munsiyari & Panchachuli 5 Peaks Base Trek',
     division: 'Kumaon',
     district: 'Pithoragarh',
     region: 'Johar Valley',
@@ -533,11 +688,28 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
     altitude: '2,200 m',
     bestTimeToVisit: 'Mar - Jun & Sep - Nov',
     highlights: ['Panchachuli 5 Peaks View', 'Milam Glacier Trek Base', 'Birthi Waterfalls', 'Darkot Handloom Village'],
-    historicalPeakHour: '05:30 - 08:30 IST'
+    historicalPeakHour: '05:30 - 08:30 IST',
+    trekDetails: {
+      distanceKm: 60,
+      durationDays: 7,
+      difficulty: 'Moderate',
+      maxAltitudeMeters: 4260,
+      baseCamp: 'Dar Village / Dharchula',
+      bestMonths: 'April to June & September to November',
+      requiresPermit: true,
+      permitDetails: 'Inner Line Permit from SDM Office Dharchula / Pithoragarh',
+      itinerarySummary: [
+        'Day 1: Drive Pithoragarh to Dharchula & Dar Village (95km)',
+        'Day 2: Trek Dar to Urthing (12km)',
+        'Day 3: Urthing to Naangling (14km)',
+        'Day 4: Naangling to Duktu & Panchachuli Base Camp (4,260m) (11km)',
+        'Day 5-6: Return trek to Dar & drive to Munsiyari'
+      ]
+    }
   },
   {
     id: 'pindari-glacier-trek',
-    name: 'Pindari Glacier Trek',
+    name: 'Pindari Glacier & Zero Point Trek',
     division: 'Kumaon',
     district: 'Bageshwar',
     region: 'Pindar River Valley',
@@ -552,7 +724,62 @@ export const INITIAL_UTTARAKHAND_NODES: LocationNode[] = [
     altitude: '3,660 m (Zero Point)',
     bestTimeToVisit: 'Apr - Jun & Sep - Nov',
     highlights: ['Pindari Glacier Zero Point', 'Khati Remote Village', 'Nanda Kot Peak View'],
-    historicalPeakHour: '06:00 - 11:00 IST'
+    historicalPeakHour: '06:00 - 11:00 IST',
+    trekDetails: {
+      distanceKm: 90,
+      durationDays: 7,
+      difficulty: 'Moderate',
+      maxAltitudeMeters: 3660,
+      baseCamp: 'Song Village (Bageshwar)',
+      bestMonths: 'April to June & September to November',
+      requiresPermit: true,
+      permitDetails: 'KMVN Rest House & Bageshwar Forest Division Permit',
+      itinerarySummary: [
+        'Day 1: Drive Kathgodam/Bageshwar to Song (36km), trek to Loharkhet (3km)',
+        'Day 2: Loharkhet to Khati Village (11km)',
+        'Day 3: Khati to Dwali (11km)',
+        'Day 4: Dwali to Phurkia & Pindari Glacier Zero Point (3,660m) (12km)',
+        'Day 5-6: Return trek to Song & drive to Bageshwar'
+      ]
+    }
+  },
+  {
+    id: 'milam-glacier-johar-valley',
+    name: 'Milam Glacier Expedition & Johar Valley',
+    division: 'Kumaon',
+    district: 'Pithoragarh',
+    region: 'Johar Valley',
+    category: 'Treks & Adventure',
+    coordinates: { lng: 80.1500, lat: 30.4300 },
+    currentCrowdScore: 14,
+    crowdStatus: 'Clear',
+    capacityLimit: 1000,
+    lastUpdated: '1 hour ago',
+    description: 'Historic Indo-Tibetan trade route trek through ghost villages of Johar valley to the massive Milam Glacier (37 sq km).',
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
+    altitude: '4,270 m',
+    bestTimeToVisit: 'May - Jun & Sep - Oct',
+    highlights: ['Massive 37 sq km Glacier', 'Indo-Tibetan Trade History', 'Ghost Villages of Johar', 'Hardeol & Trishuli View'],
+    historicalPeakHour: '06:00 - 10:00 IST',
+    trekDetails: {
+      distanceKm: 110,
+      durationDays: 10,
+      difficulty: 'Difficult',
+      maxAltitudeMeters: 4270,
+      baseCamp: 'Munsiyari (Pithoragarh)',
+      bestMonths: 'May to June & September to October',
+      requiresPermit: true,
+      permitDetails: 'Mandatory Inner Line Permit (Munsiyari SDM Office / ITBP)',
+      itinerarySummary: [
+        'Day 1: Drive Kathgodam to Munsiyari (275km)',
+        'Day 2: Munsiyari to Lilam (12km)',
+        'Day 3: Lilam to Bogdiyar (13km)',
+        'Day 4: Bogdiyar to Rilkot (12km)',
+        'Day 5: Rilkot to Milam Village (15km)',
+        'Day 6: Milam Village to Milam Glacier Zero Point (4,270m) (6km)',
+        'Day 7-9: Return trek to Munsiyari'
+      ]
+    }
   }
 ];
 
@@ -737,4 +964,314 @@ export const ROUTE_DISTANCES: Record<string, Record<string, { km: number; hours:
     'Yamunotri': { km: 424, hours: 10.5 },
   },
 };
+
+// ── Folk Music & Cultural Pahadi Bands Data ─────────────────────────────────
+
+import { FolkArtist, TraditionalInstrument, DisasterEvent } from '@/types/location';
+
+export const FOLK_ARTISTS_DATA: FolkArtist[] = [
+  {
+    id: 'artist-narendra-singh-negi',
+    name: 'Narendra Singh Negi',
+    category: 'Folk Legend',
+    region: 'Garhwal',
+    title: 'Voice of Uttarakhand & Padma Shri Folk Singer',
+    bio: 'Renowned as the Bob Dylan of the Himalayas. Over 1,000 iconic Garhwali songs capturing Himalayan folklore, environmental preservation, social issues, and love.',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't1', title: 'Bedu Pako Baro Masa', artist: 'Narendra Singh Negi', genre: 'Classic Pahadi Folk', youtubeUrl: 'https://www.youtube.com/results?search_query=Bedu+Pako+Baro+Masa+Negi', spotifyUrl: '#' },
+      { id: 't2', title: 'Surma Sarela', artist: 'Narendra Singh Negi', genre: 'Garhwali Romantic Folk', youtubeUrl: 'https://www.youtube.com/results?search_query=Surma+Sarela+Narendra+Singh+Negi', spotifyUrl: '#' },
+      { id: 't3', title: 'Chhuma Chaudhani', artist: 'Narendra Singh Negi', genre: 'Cultural Legend', youtubeUrl: 'https://www.youtube.com/results?search_query=Chhuma+Chaudhani', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Harmonium', 'Dhol Damau', 'Flute'],
+    associatedValleys: ['Alaknanda Valley', 'Mandakini Valley', 'Rawain Valley']
+  },
+  {
+    id: 'artist-basanti-devi-bisht',
+    name: 'Basanti Devi Bisht',
+    category: 'Folk Legend',
+    region: 'Garhwal',
+    title: 'Padma Shri Jagar Singer & Cultural Icon',
+    bio: 'The first female singer of the traditional Jagar (divine spirit invocation) folk genre in Uttarakhand. Preserving centuries-old sacred mountain oral traditions.',
+    imageUrl: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't4', title: 'Maa Nanda Devi Jagar', artist: 'Basanti Devi Bisht', genre: 'Sacred Jagar Chant', youtubeUrl: 'https://www.youtube.com/results?search_query=Basanti+Devi+Bisht+Jagar', spotifyUrl: '#' },
+      { id: 't5', title: 'Nanda Raj Jat Gatha', artist: 'Basanti Devi Bisht', genre: 'Epical Folk Gatha', youtubeUrl: 'https://www.youtube.com/results?search_query=Nanda+Raj+Jat+Basanti+Bisht', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Thali', 'Damau'],
+    associatedValleys: ['Nanda Devi Sanctuary', 'Chamoli Valley']
+  },
+  {
+    id: 'artist-pandavaas-band',
+    name: 'Pandavaas Band',
+    category: 'Modern Pahadi Band',
+    region: 'Statewide',
+    title: 'Pioneers of Modern Himalayan Music Fusion',
+    bio: 'Acclaimed audio-visual music production band blending ancient Himalayan folk instruments (Ransingha, Dhol) with contemporary cinematic rock & ambient soundscapes.',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't6', title: 'Time Machine (Uttarakhand Folk Tale)', artist: 'Pandavaas', genre: 'Cinematic Folk Fusion', youtubeUrl: 'https://www.youtube.com/results?search_query=Pandavaas+Time+Machine', spotifyUrl: '#' },
+      { id: 't7', title: 'Jagar - The Awakening', artist: 'Pandavaas', genre: 'Modern Jagar Rock', youtubeUrl: 'https://www.youtube.com/results?search_query=Pandavaas+Jagar', spotifyUrl: '#' },
+      { id: 't8', title: 'Baramasa Project', artist: 'Pandavaas', genre: 'Pahadi Ambient', youtubeUrl: 'https://www.youtube.com/results?search_query=Pandavaas+Baramasa', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Electric Guitar', 'Ransingha', 'Dhol', 'Synthesizer'],
+    associatedValleys: ['Srinagar Garhwal', 'Dehradun Valley']
+  },
+  {
+    id: 'artist-gopal-babu-goswami',
+    name: 'Gopal Babu Goswami',
+    category: 'Folk Legend',
+    region: 'Kumaon',
+    title: 'Legendary Nightingale of Kumaon',
+    bio: 'Immortal voice of Kumaon. Songs like "Hit Bhina Almoray" and "Kaile Baji Muruli" remain the soul of Kumaoni cultural festivals and identity.',
+    imageUrl: 'https://images.unsplash.com/photo-1511735111819-9a3f7709049c?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't9', title: 'Hit Bhina Almoray', artist: 'Gopal Babu Goswami', genre: 'Kumaoni Classic Folk', youtubeUrl: 'https://www.youtube.com/results?search_query=Hit+Bhina+Almoray', spotifyUrl: '#' },
+      { id: 't10', title: 'Kaile Baji Muruli', artist: 'Gopal Babu Goswami', genre: 'Kumaoni Flute Ballad', youtubeUrl: 'https://www.youtube.com/results?search_query=Kaile+Baji+Muruli', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Flute', 'Hurka'],
+    associatedValleys: ['Almora Valley', 'Kosi River Valley']
+  },
+  {
+    id: 'artist-jubin-nautiyal-band',
+    name: 'Jubin Nautiyal & Modern Pahadi Collective',
+    category: 'Modern Pahadi Band',
+    region: 'Statewide',
+    title: 'Global Himalayan Pop Icon',
+    bio: 'Jaunsari/Garhwali native who brought Himalayan tunes to global charts. Actively promotes Jaunsari and Garhwali acoustic sessions.',
+    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't11', title: 'Taqdeer (Jaunsari Folk Session)', artist: 'Jubin Nautiyal', genre: 'Acoustic Pahadi Pop', youtubeUrl: 'https://www.youtube.com/results?search_query=Jubin+Nautiyal+Pahadi+song', spotifyUrl: '#' },
+      { id: 't12', title: 'O Aasman Wale', artist: 'Jubin Nautiyal', genre: 'Himalayan Ballad', youtubeUrl: 'https://www.youtube.com/results?search_query=Jubin+Nautiyal+O+Aasman+Wale', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Acoustic Guitar', 'Harmonium'],
+    associatedValleys: ['Jaunsar Bawar', 'Dehradun Hills']
+  },
+  {
+    id: 'artist-pritam-bhartwan',
+    name: 'Pritam Bhartwan (Jagar Samrat)',
+    category: 'Folk Legend',
+    region: 'Garhwal',
+    title: 'Padma Shri Jagar Samrat & Master Percussionist',
+    bio: 'Unmatched exponent of the ancient Jagar tradition and Pawada epic ballads. Master of Dhol Damau percussion and Himalayan oral chanting.',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't13', title: 'Nirankar Jagar', artist: 'Pritam Bhartwan', genre: 'Sacred Jagar Chant', youtubeUrl: 'https://www.youtube.com/results?search_query=Pritam+Bhartwan+Jagar', spotifyUrl: '#' },
+      { id: 't14', title: 'Rajula Malushahi Gatha', artist: 'Pritam Bhartwan', genre: 'Epic Romance Ballad', youtubeUrl: 'https://www.youtube.com/results?search_query=Rajula+Malushahi+Pritam+Bhartwan', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Dhol', 'Damau', 'Thali', 'Hurka'],
+    associatedValleys: ['Srinagar Garhwal', 'Bhagirathi Valley']
+  },
+  {
+    id: 'artist-meena-rana',
+    name: 'Meena Rana',
+    category: 'Folk Legend',
+    region: 'Garhwal',
+    title: 'Nightingale of Garhwal Folk Duets',
+    bio: 'Prolific female folk singer with over 500 iconic duets across Garhwali, Kumaoni, and Jaunsari languages spanning three decades.',
+    imageUrl: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't15', title: 'Sobhani Band', artist: 'Meena Rana', genre: 'Classic Garhwali Duet', youtubeUrl: 'https://www.youtube.com/results?search_query=Sobhani+Band+Meena+Rana', spotifyUrl: '#' },
+      { id: 't16', title: 'Chandra Solani', artist: 'Meena Rana', genre: 'Pahadi Cultural Folk', youtubeUrl: 'https://www.youtube.com/results?search_query=Chandra+Solani+Meena+Rana', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Harmonium'],
+    associatedValleys: ['Pauri Garhwal', 'Doon Valley']
+  },
+  {
+    id: 'artist-gunjan-dangwal',
+    name: 'Gunjan Dangwal & Modern Beats',
+    category: 'Modern Pahadi Band',
+    region: 'Statewide',
+    title: 'Pahadi Music Producer & Pop Innovator',
+    bio: 'Modern music composer who modernized Garhwali & Kumaoni tracks like "Fwa Bagana" with electronic beats while preserving traditional vocal soul.',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
+    popularTracks: [
+      { id: 't17', title: 'Fwa Bagana Modern Mix', artist: 'Gunjan Dangwal', genre: 'Electro Pahadi Folk', youtubeUrl: 'https://www.youtube.com/results?search_query=Fwa+Bagana+Gunjan+Dangwal', spotifyUrl: '#' },
+      { id: 't18', title: 'Chait Ki Chaitwal', artist: 'Gunjan Dangwal', genre: 'Folk Pop Fusion', youtubeUrl: 'https://www.youtube.com/results?search_query=Chait+Ki+Chaitwal', spotifyUrl: '#' }
+    ],
+    instrumentsPlayed: ['Synthesizer', 'Dhol', 'Drums'],
+    associatedValleys: ['Tehri Garhwal', 'Dehradun']
+  }
+];
+
+export const TRADITIONAL_INSTRUMENTS_DATA: TraditionalInstrument[] = [
+  {
+    id: 'inst-dhol-damau',
+    name: 'Dhol & Damau Duo',
+    regionalName: 'ढोल-दमाऊ',
+    material: 'Copper/Brass bowl, Wood, Goat-skin membrane',
+    description: 'The sacred percussion duo of Uttarakhand. Played by the Das/Auja community during religious Jagars, weddings, and royal processions.',
+    usedIn: 'Garhwali & Kumaoni Jagars, Nanda Devi Raj Jat, Weddings',
+    imageUrl: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 'inst-ransingha',
+    name: 'Ransingha / Ran-Shing',
+    regionalName: 'रणसिंगा',
+    material: 'S-shaped curved Copper horn',
+    description: 'Ancient Himalayan war horn played during royal war calls, sacred temple processions, and high mountain announcements.',
+    usedIn: 'Temple Processions, War Re-enactments, Royal Ceremonies',
+    imageUrl: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 'inst-hurka',
+    name: 'Hurka / Hourglass Drum',
+    regionalName: 'हुड़का',
+    material: 'Hourglass-shaped wood body, leather thongs',
+    description: 'Hourglass-shaped drum holding central importance in Kumaoni Hurkiya Baul folk storytelling and paddy sowing songs.',
+    usedIn: 'Hurkiya Baul Sowing Songs, Kumaoni Ballads',
+    imageUrl: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 'inst-turhi',
+    name: 'Turhi Trumpet',
+    regionalName: 'तुरी',
+    material: 'Straight brass or silver tube with flared bell',
+    description: 'Resonant trumpet blown at high pitch to announce the arrival of deity palanquins during Char Dham Yatras.',
+    usedIn: 'Deity Doli Arrivals, Char Dham Festivities',
+    imageUrl: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 'inst-bhinai',
+    name: 'Bhinai / Double Bamboo Flute',
+    regionalName: 'भिनाई',
+    material: 'Twin bamboo pipes bound with bronze wire',
+    description: 'Pastoral shepherd double flute creating hypnotic drone and melody simultaneously across high alpine meadows.',
+    usedIn: 'Pastoral Shepherd Melodies, Kumaoni Love Ballads',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 'inst-damama',
+    name: 'Damama / Heavy Kettle Drum',
+    regionalName: 'दमामा',
+    material: 'Cast iron bowl with heavy leather head',
+    description: 'Deep resonant kettle drum played alongside Dhol to echo sacred rhythms across deep Himalayan river valleys.',
+    usedIn: 'Royal Festivities, Jagar Ritual Invocations',
+    imageUrl: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=600&q=80'
+  }
+];
+
+export const NATURAL_DISASTERS_DATA: DisasterEvent[] = [
+  {
+    id: 'disaster-kedarnath-2013',
+    title: '2013 Kedarnath Himalayan Deluge & Flash Floods',
+    year: 2013,
+    dateStr: '16-17 June 2013',
+    category: 'Flash Flood',
+    district: 'Rudraprayag',
+    region: 'Garhwal',
+    severity: 'Critical',
+    coordinates: { lng: 79.0669, lat: 30.7346 },
+    summary: 'Chorabari Glacier lake outburst combined with multi-day torrential cloudbursts triggered catastrophic flash floods in the Mandakini and Alaknanda river basins.',
+    impact: {
+      livesAffected: '5,000+ casualties & missing persons across 4,200 villages',
+      infrastructureDamage: 'Sonprayag bridge destroyed, Rambara town completely submerged, 1,300+ roads washed out.',
+      affectedCorridors: ['Rudraprayag-Gaurikund NH-107', 'Rishikesh-Badrinath NH-58', 'Gangotri Highway'],
+      reconstructionStatus: 'Fully rebuilt with concrete bio-retaining walls, new Sonprayag-Kedar trek path, 3-tier disaster shelters, and automated Doppler radar monitoring.',
+      currentSafetyAdvice: 'Follow mandatory Sonprayag Biometric token check. Avoid trekking during active orange weather warnings.'
+    },
+    lessonsLearned: [
+      'Establishment of State Disaster Response Force (SDRF) in Uttarakhand',
+      'Construction of multi-tiered river embankments along Mandakini',
+      'Satellite weather telemetry & automated rain gauges along Char Dham corridors'
+    ],
+    currentSafetyScore: 92,
+    mitigationMeasures: [
+      'Chorabari glacial lake sensor monitoring',
+      'Mandakini river wall reinforcement',
+      'Real-time weather SMS alert grid'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    id: 'disaster-chamoli-2021',
+    title: '2021 Chamoli Glacial Outburst & Rishi Ganga Surge',
+    year: 2021,
+    dateStr: '7 February 2021',
+    category: 'Glacial Outburst',
+    district: 'Chamoli',
+    region: 'Garhwal',
+    severity: 'Severe',
+    coordinates: { lng: 79.7420, lat: 30.4180 },
+    summary: 'A rock and ice avalanche from Nanda Ghunti glacier triggered a devastating surge in Rishi Ganga and Dhauli Ganga rivers, impacting hydroelectric projects.',
+    impact: {
+      livesAffected: '200+ workers and villagers affected',
+      infrastructureDamage: 'Rishi Ganga Hydro Project destroyed, Tapovan Vishnugad tunnel flooded, 5 motor bridges breached.',
+      affectedCorridors: ['Joshimath-Niti Pass Road', 'Tapovan Access Corridor'],
+      reconstructionStatus: 'New steel girder bridges built; high-frequency river water level warning sensors operational.',
+      currentSafetyAdvice: 'Check Dhauli Ganga river level indicators near Raini village before travelling towards Niti Valley.'
+    },
+    lessonsLearned: [
+      'Deployment of early warning water-level radar sensors on glacier streams',
+      'Strict environmental zoning for mountain hydel projects',
+      'Disaster drone surveillance squads established in Chamoli'
+    ],
+    currentSafetyScore: 88,
+    mitigationMeasures: [
+      'Acoustic river surge warnings',
+      'SDRF rapid response unit in Joshimath'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    id: 'disaster-joshimath-2023',
+    title: '2023 Joshimath Land Subsidence & Aquifer Crisis',
+    year: 2023,
+    dateStr: 'January 2023',
+    category: 'Land Subsidence',
+    district: 'Chamoli',
+    region: 'Garhwal',
+    severity: 'Severe',
+    coordinates: { lng: 79.5690, lat: 30.5500 },
+    summary: 'Cracks appeared in 800+ structures across Joshimath township due to sub-surface aquifer rupture, toe erosion by Alaknanda, and fragile moraine geology.',
+    impact: {
+      livesAffected: '250+ families safely relocated to relief camps',
+      infrastructureDamage: 'Cracks on NH-58 Badrinath access highway, structural damage to hotels and town infrastructure.',
+      affectedCorridors: ['Joshimath Town Corridor', 'Auli Cable Car Base'],
+      reconstructionStatus: 'New Helang-Marwari Badrinath bypass road under construction to divert heavy Char Dham traffic away from vulnerable town slopes.',
+      currentSafetyAdvice: 'Heavy vehicles diverted to Helang bypass corridor during peak traffic hours.'
+    },
+    lessonsLearned: [
+      'Load-bearing cap enforced on commercial construction in fragile moraine zones',
+      'Construction of comprehensive subterranean town drainage network',
+      'ISRO satellite radar (InSAR) continuous land displacement monitoring'
+    ],
+    currentSafetyScore: 85,
+    mitigationMeasures: [
+      'InSAR Satellite Subsidence Monitoring',
+      'Helang-Marwari Bypass Highway Construction',
+      'Retaining wall slope stabilization'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    id: 'disaster-malpa-1998',
+    title: '1998 Malpa Landslide & Rockfall',
+    year: 1998,
+    dateStr: '18 August 1998',
+    category: 'Landslide',
+    district: 'Pithoragarh',
+    region: 'Kumaon',
+    severity: 'Historical Warning',
+    coordinates: { lng: 80.7300, lat: 29.8800 },
+    summary: 'A massive rockfall destroyed Malpa village along the Kali River, taking down section of the Kailash Mansarovar Yatra pilgrimage trail.',
+    impact: {
+      livesAffected: '200+ casualties including Kailash Mansarovar pilgrims and dancer Protima Bedi',
+      infrastructureDamage: 'Pithoragarh-Dharchula border trail devastated.',
+      affectedCorridors: ['Dharchula-Lipulekh Kailash Yatra Route'],
+      reconstructionStatus: 'Border Roads Organisation (BRO) constructed an all-weather blacktopped motor road bypassing rockfall zones.',
+      currentSafetyAdvice: 'All-weather BRO highway now operational up to Lipulekh Pass.'
+    },
+    lessonsLearned: [
+      'Geological slope stabilization mapping across Kumaon border highways',
+      'BRO avalanche and landslide rock-shed structures built along Kali river'
+    ],
+    currentSafetyScore: 90,
+    mitigationMeasures: [
+      'BRO Rock-shed protective tunnels',
+      'Slope mesh netting along cliff faces'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80'
+  }
+];
 
